@@ -25,6 +25,18 @@ app.get('/todos', function (req, res) {
   })
 })
 
+app.get('/todos/search', function (req, res) {
+  var q = req.query.q;
+  var mathchedTodos = todos.filter(function (todo) {
+    return todo.name.toLowerCase().indexOf(q.toLocaleLowerCase()) != -1
+  });
+  res.render('index', {
+    todos: mathchedTodos,
+    q: q
+  })
+  console.log(req.query);
+})
+
 app.listen(3000, function () {
   console.log('Server running at port', port)
 })
