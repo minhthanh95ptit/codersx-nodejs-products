@@ -1,0 +1,22 @@
+{
+  "name": "codersx-nodejs-products",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhthanh95ptit/codersx-nodejs-products.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhthanh95ptit/codersx-nodejs-products/issues"
+  },
+  "homepage": "https://github.com/minhthanh95ptit/codersx-nodejs-products#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
