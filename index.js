@@ -1,10 +1,14 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 var port = 3000;
 
 app.set('view engine', 'pug');
 app.set('views', './views');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
   res.send("Hello codersx");
@@ -35,6 +39,18 @@ app.get('/todos/search', function (req, res) {
     q: q
   })
   console.log(req.query);
+})
+
+app.get('/todos/create', function (req, res) {
+  res.render('todos/create')
+
+})
+
+app.post('/todos/create', function (req, res) {
+  console.log(req.body);
+  todos.push(req.body);
+  // res.redirect('/todos');
+  res.redirect('back')
 })
 
 app.listen(3000, function () {
