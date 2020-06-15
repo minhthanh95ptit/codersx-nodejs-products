@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/minhthanh95ptit/codersx-nodejs-products#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
   }
 }
