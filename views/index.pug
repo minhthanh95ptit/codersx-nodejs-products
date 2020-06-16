@@ -1,9 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+    integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
+    
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
 
 a(href="/todos/create") New Todo
 
 form(action="/todos/search", method="GET")
-  input(type="text" name="q")
-  button(value=q) search
+  input.input-group-text(type="text" name="q")
+  span &nbsp
+  button.btn.btn-info(value=q) search
 
 
 each todo in todos
@@ -11,6 +24,6 @@ each todo in todos
   li 
     span #{todo.name}
     span &nbsp
-    a(href="/todos/" + todo.id) View
+    a.btn.btn-primary(href="/todos/" + todo.id) View
     span &nbsp
-    a(href="/todos/" + todo.id +"/delete") Delete
+    a.btn.btn-danger(href="/todos/" + todo.id +"/delete") Delete
